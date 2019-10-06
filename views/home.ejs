@@ -1,0 +1,13 @@
+<%- include('partials/header') %>
+<h1>Home</h1>
+<div class="wrapper">
+<%= content %>
+<% for (var i = 0; i < postedArticles.length; i++) { %>
+    <% console.log(postedArticles[i].title); %>
+    <% console.log(postedArticles[i].article); %>
+    <h3><%= postedArticles[i].title %></h3>
+    <!-- Truncating the article text to 100 chars -->
+    <p><%= postedArticles[i].article.substr(0,100) %> ...<a href='/posts/:<%= postedArticles[i].title %>'>Read More</a></p>
+<% } %>
+</div>
+<%- include('partials/footer') %>
